@@ -1,0 +1,25 @@
+.footer {
+    background-color: #5c9ede;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-content p {
+    margin: 10px 0;
+  }
+  
+  .footer-content p:first-child {
+    font-weight: bold;
+  }
+  
+  .footer-content p:last-child {
+    font-size: 12px;
+  }
+  
