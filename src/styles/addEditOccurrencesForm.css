@@ -1,0 +1,36 @@
+.Add_Occurrences_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .Add_Occurrences_container form {
+    width: 100%;
+    margin: 10px;
+  }
+  
+  .Occurrences_Activities_container {
+    display: flex;
+  }
+
+  .Occurrences_container {
+    background-color: #5c9ede;
+    font-size: 1rem;
+    border-radius: 0px 0 0px 10px;
+    padding: .75rem;
+    width: 100%;
+  }
+  
+  .Activities_container {
+    background-color: #87CEEB;
+    font-size: 1rem;
+    border-radius: 0px 0px 10px 0px;
+    padding: .75rem;
+    width: 100%;
+  }
+  
+  .label-item {
+    padding: 5px 0;
+  }
+  

@@ -8,6 +8,7 @@ const AddEditOccurrencesForm = () => {
   const [otherActivity, setOtherActivity] = useState('');
   const [time, setTime] = useState(getCurrentTime());
   const [date, setDate] = useState(getCurrentDate());
+  const [details, setDetails] = useState([]);
 
   const occurrenceOptions = [
     'Shortness of Breath',
@@ -20,6 +21,8 @@ const AddEditOccurrencesForm = () => {
     'Tired/Fatigue',
     'Anxiety',
     'Blood pressure drop',
+    'Blood pressure increase',
+    'Pass out'
   ];
 
   const activityOptions = [
@@ -67,6 +70,10 @@ const AddEditOccurrencesForm = () => {
     setDate(event.target.value);
   };
 
+  const handleDetailsChange = (event) => {
+    setDetails(event.target.value)
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission
@@ -96,7 +103,7 @@ const AddEditOccurrencesForm = () => {
           <div className='Occurrences_container'>
             <label>Occurrences:</label>
             {occurrenceOptions.map((option) => (
-              <div key={option}>
+              <div key={option} className='label-item'>
                 <label>
                   <input
                     type="checkbox"
@@ -108,7 +115,7 @@ const AddEditOccurrencesForm = () => {
                 </label>
               </div>
             ))}
-            <div>
+            <div className='label-item'>
               <label>
                 <input
                   type="checkbox"
@@ -116,7 +123,7 @@ const AddEditOccurrencesForm = () => {
                   checked={occurrences.includes('Other')}
                   onChange={handleOccurrenceChange}
                 />
-                Other:
+                Other: 
                 <input
                   type="text"
                   value={otherOccurrence}
@@ -128,7 +135,7 @@ const AddEditOccurrencesForm = () => {
           <div className='Activities_container'>
             <label>Activities during occurrence:</label>
             {activityOptions.map((option) => (
-              <div key={option}>
+              <div key={option} className='label-item'>
                 <label>
                   <input
                     type="checkbox"
@@ -140,7 +147,7 @@ const AddEditOccurrencesForm = () => {
                 </label>
               </div>
             ))}
-            <div>
+            <div className='label-item'>
               <label>
                 <input
                   type="checkbox"
@@ -148,7 +155,7 @@ const AddEditOccurrencesForm = () => {
                   checked={activities.includes('Other')}
                   onChange={handleActivityChange}
                 />
-                Other:
+                Other: 
                 <input
                   type="text"
                   value={otherActivity}
@@ -156,6 +163,11 @@ const AddEditOccurrencesForm = () => {
                 />
               </label>
             </div>
+            <div className='label-item'>
+          <label>Details: </label>
+          <textarea type="textbox" onChange={handleDetailsChange} >
+          </textarea>
+        </div>
           </div>
         </div>
         <div>
@@ -166,7 +178,6 @@ const AddEditOccurrencesForm = () => {
           <label>Date:</label>
           <input type="date" value={date} onChange={handleDateChange} />
         </div>
-        
         <button type="submit">Submit</button>
       </form>
     </div>
