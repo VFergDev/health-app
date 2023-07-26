@@ -3,15 +3,18 @@ import React from "react";
 
 import Header from './containers/header/Header';
 import Footer from './containers/footer/Footer';
-import AddEditOccurrenceForm from "../components/AddEditOccurrencesForm";
+import AddEditOccurrencesForm from "../components/AddEditOccurrencesForm";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <div>
-        <AddEditOccurrenceForm />
-        </div>Rock
+      <div className="AddEditOccurrenceForm">
+        <AddEditOccurrencesForm />
+        </div>
+        <div className="AddEditMedicationForm">
+
+        </div>
       <div className="footer">
         <Footer />
       </div>
